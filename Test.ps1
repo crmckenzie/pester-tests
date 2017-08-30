@@ -76,7 +76,8 @@ $OnSourceFileChanged = {
     
         $fileInfo = New-Object IO.FileInfo $FullPath
         $TestFileName = "$($FileInfo.BaseName).Tests.ps1"
-        gci -path "./module/tests" -filter $TestFileName -recurse
+        write-host "Test file: $TestFileName"
+        gci -path "./tests" -filter $TestFileName -recurse
     }
     
     $TestFile = Find-AssociatedTestFile -FullPath $e.FullPath
